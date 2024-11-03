@@ -1,0 +1,642 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+
+    --header-height: 3.5rem;
+    /* Colores base*/
+    --first-color: #042c93;
+    --second-color:#0881a6;
+    --body-color: #fff;
+    --container-color: #9b98ff;
+    --border-color: #44556f;
+    --title-color: #000;
+
+    /*texto y tamaño de las letras*/
+    --text-size: 1.25rem;
+    --body-font: "Syne", sans-serif;
+    --normal-text-size: .938rem;
+
+    /*Fint weight*/
+    --font-regular: 400;
+    --font-medium: 500;
+    --font-semi-bold: 600;
+
+    /*z index*/
+    --z-fixed: 100;
+    --z-modal: 1000;
+}
+
+/*responsive typography*/
+@media screen and (min-width: 1023px){
+    :root{
+        --h2-font-size: 1.5rem;
+        --normal-font-size: 1rem;
+    }
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: #f0faff;
+    overflow-x: hidden;
+}
+
+body,
+input,
+button{
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+}
+
+input,
+button{
+    border: none;
+    outline: none;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+.logo-nav{
+    width: 180px;
+    height: 60px;
+    transform: translateX(-90px);
+}
+
+/* css reusable*/
+.container{
+    max-width: 1120px;
+    margin-inline: 0.5rem;
+}
+
+.search,
+.login{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: var(--z-modal);
+    background-color: hsla(230, 75%, 15%, .1);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px); /* For safari */
+    padding: 8rem 1.5rem 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .4s;
+}
+
+.search__close,
+.login__close{
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    font-size: 1.5rem;
+    color: var(--title-color);
+    cursor: pointer;
+}
+
+/* =======HEADER & nAV =====*/
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--body-color);
+    box-shadow: 0 2px 16px hsla(230, 89%, 14%, 0.15);
+    z-index: var(--z-fixed);
+    background: linear-gradient(90deg, transparent,rgb(143, 164, 206),transparent);
+}
+
+.nav{
+    height: var(--header-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav__actions{
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+}
+
+.nav__search, 
+.nav__login, 
+.nav__toggle, 
+.nav__close {
+    font-size: 1.25rem;
+    color: var(--title-color);
+    cursor: pointer;
+    transition: color .4s;
+}
+
+
+:is(.nav__search,.nav__login,.nav__toggle,.nav__link):hover{
+    /*color: var(--first-color);*/
+    color: #fff;
+}
+
+/*casilas seleccionadas con el puntero*/
+
+.nav__link {
+    position: relative;
+    display: inline-block;
+    padding: 8px 15px;
+    color: var(--title-color);
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.nav__link:hover {
+    color: #fff;
+    transform: translateY(-5px) scale(1.05);
+    background: linear-gradient(45deg, #1a194f17, #5233ff);
+    border-radius: 8px;
+}
+
+
+/**navigation for mobile devices*/
+
+@media screen and (max-width: 1023px) {
+    .nav__menu {
+        position: fixed;
+        top: -100%;
+        left: 0;
+        background-color: var(--body-color);
+        box-shadow: 0 8px 16px hsla(230, 75%, 32%, .15);
+        width: 100%;
+        padding-block: 4.5rem 4rem;
+        transition: top .4s;
+    }
+    .logo-nav{
+        transform: translateX(0);
+        width: 100px;
+        height: 50px;
+    }
+}
+
+.nav__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    text-align: center;
+}
+
+.nav__link {
+    color: var(--title-color);
+    font-weight: var(--font-semi-bold);
+    transition: color .4s;
+}
+
+.nav__close {
+    position: absolute;
+    top: 1.15rem;
+    right: 1.5rem;
+}
+
+/* Show menu */
+
+.show-menu {
+    top: 0;
+}
+
+/*------search---*/
+
+.search__form{
+    display: flex;
+    align-items: center;
+    column-gap: .5rem;
+    background-color: var(--container-color);
+    box-shadow: 0 8px 32px hsla(230, 75%, 15%, .2);
+    padding-inline: 1rem;
+    border-radius: .5rem;
+    transform: translateY(-1rem);
+    transition: transform .4s;
+}
+
+.search__icon{
+    font-size: 1.5rem;
+    color: var(--title-color);
+}
+
+.search__input{
+    width: 100%;
+    padding-block: 1rem;
+    background-color: var(--container-color);
+    color: var(--title-color);
+}
+
+.search__input::placeholder{
+    color: var(--title-color);
+}
+
+/*show-search*/
+
+.show-search {
+    opacity: 1;
+    pointer-events: initial;
+}
+
+.show-search, 
+.search__form {
+    transform: translateY(0);
+}
+
+/*--- LOGIN --*/
+
+.login__form,
+.login__group{
+    display: grid;
+}
+
+.login__form{
+    background-color: var(--container-color);
+    padding: 30px 20px 35px;
+    box-shadow: 0 8px 32px hsla(230, 75%, 15%, .2);
+    border-radius: 16px ;
+    row-gap: 25px;
+    text-align: center;
+    transform: translateY(-16px);
+    transition: transform .4s;
+    
+}
+.login__log{
+    display: block;
+    width: 40%;
+    margin: auto;
+}
+
+.login__group{
+    row-gap: 1rem;
+}
+
+.login__label{
+    display: block;
+    text-align: initial;
+    color: var(--title-color);
+    font-weight: var(--font-medium);
+    margin-bottom: .25rem;
+}
+
+.login__input{
+    width: 100%;
+    background-color: var(--container-color);
+    border: 2px solid var(--border-color);
+    padding: .5rem;
+    border-radius: .5rem;
+    color: var(--title-color);
+}
+
+.login__input::placeholder{
+    color: var(--title-color);
+}
+
+.login__signup{
+    margin-bottom: 1rem;
+}
+
+.login__signup a{
+    color: var(--first-color);
+}
+
+.login__forgot{
+    display: inline-block;
+    color: var(--first-color);
+    margin-bottom: 1rem;
+}
+
+.login__button{
+    display: inline-block;
+    background-color: var(--first-color);
+    width: 100%;
+    color: var(--body-color);
+    font-weight: var(--font-semi-bold);
+    padding: .5rem;
+    border-radius: .5rem;
+    cursor: pointer;
+    transition: box-shadow .4s;
+}
+
+.login__button:hover{
+    box-shadow: 0 4px 24px hsla(230, 75%, 40%, 0.932);
+}
+
+/*show login*/
+
+.show-login{
+    opacity: 1;
+    pointer-events: initial;
+}
+
+.show-login .login__form{
+    transform: translateY(0);
+}
+
+/*= BREAKPOINTS */
+
+/* For medium devices */
+@media screen and (min-width: 576px) {
+    .search,
+    .login {
+    padding-top: 10rem;
+}
+
+
+
+.search__form {
+    max-width: 28rem;
+    margin-inline: auto;
+}
+
+.search__close,
+.login__close {
+    width: max-content;
+    top: 5rem;
+    left: 0;
+    right: 0;
+    margin-inline: auto;
+    font-size: 2rem;
+}
+
+.login__form {
+    max-width: 25rem;
+    margin-inline: auto;
+}
+}
+
+  /* For large devices */
+
+@media screen and (min-width: 1023px) {
+
+.nav {
+    height: calc(var(--header-height) + 2rem);
+    column-gap: 3rem;
+}
+.nav__close, 
+.nav__toggle {
+    display: none;
+}
+
+.nav__menu {
+    margin-left: auto;
+}
+.nav__list {
+    flex-direction: row;
+    column-gap: .5rem;
+}
+
+.login__form {
+    padding: 3rem 2rem 3.5rem;
+}
+
+
+}
+
+@media screen and (min-width: 72rem) {
+.container {
+    margin-inline: auto;
+}
+
+}
+
+/* **************  whatsApp ********* */
+
+/*Estilos generales del boton whatsapp*/
+.whatsapp-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #25D366;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    animation: breathe 2s ease-in-out infinite;
+    }
+
+/*Estilos solo al icono whatsapp*/
+.whatsapp-btn i {
+    color: #fff;
+    font-size: 24px;
+    animation: beat 3s ease-in-out infinite;
+    text-decoration: none;
+    }
+
+    /* Texto que aparece al hacer hover */
+.whatsapp-btn::after {
+    content: "Chatea con nosotros";
+    position: absolute;
+    bottom: 70px; /* Ajusta la posición según lo que necesites */
+    right: -10px;
+    background-color: #fff;
+    color: #25D366;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    white-space: nowrap;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.whatsapp-btn:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+    /*Estilos con animation contorno respirando*/
+    @keyframes breathe {
+    0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    }
+    }
+
+    /*Estilos de animacion del icono latiendo*/
+    @keyframes beat {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+    }
+
+/* CARROUSEL ====================== section card-move */
+
+.container-slider {
+    position: relative;
+    width: 400%; /* Ajusta según el ancho deseado */
+    max-width: 85rem; /*Ajusta el ancho máximo si es necesario */
+    height: 28rem; /* Ajusta el alto según lo que necesites */
+    overflow: hidden;
+    margin: 7rem auto; /* Para centrar horizontalmente el contenedor en la página */
+    background: linear-gradient(90deg, rgba(2,0,36,0.7133228291316527) 2%, rgba(0,212,255,1) 30%, rgba(9,9,121,1) 95%);
+    }
+    
+.slider {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slider__section {
+    min-width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.slider__img {
+    max-width: 50%; /* Imagen ocupa 50% del ancho */
+    max-height: 100%;
+    object-fit: cover;
+    margin-right: auto; /* Imagen alineada a la derecha */
+    margin-left: 3.125rem;
+    border-radius: 0.625rem;
+    box-shadow: 0 0.75rem 1rem hsla(230, 75%, 32%, .15);
+}
+
+.slider__content {
+    max-width: 50%; /* Contenido ocupa el 50% restante */
+    padding: 1.25rem;
+    text-align: center;
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.slider__title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0.625rem 1.563rem 1rem 0.063;
+}
+
+.slider__text {
+    color: var(--body-color);
+    font-size: 1rem;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+.slider__btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    background-color: rgba(10, 26, 49, 0.5);
+    padding: 0.625rem;
+    cursor: pointer;
+    z-index: 10;
+}
+.slider__btn:hover{
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.slider__btn--right {
+    right: 0.625rem;
+}
+
+.slider__btn--left {
+    left: 0.625rem;
+}
+
+/* Estilos responsivos para pantallas medianas (tabletas) */
+
+@media only screen and (max-width: 1024px) {
+    .container-slider {
+        display: block;
+        position: relative;
+        width: 100%;
+        max-width: auto;
+    }
+
+    .slider__img {
+        position: absolute;
+        top: auto;
+        max-width: 45%;
+    }
+
+    .slider__content {
+        position:absolute;
+        top: 30%;
+        right: 10px;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .slider__title {
+        font-size: 10px;
+    }
+
+    .slider__text {
+        font-size: 14px;
+        width: 400px;
+    }
+}
+
+/* Estilos responsivos para pantallas pequeñas (móviles) */
+
+/*franja informativa */
+
+.news-ticker {
+    width: 100%;
+    overflow: hidden;
+    background-color: #333;
+    color: #fff;
+    padding: 5px 0;
+    box-sizing: border-box;
+}
+
+.news-ticker__content {
+    display: flex;
+    white-space: nowrap;
+    animation: ticker-move 60s linear infinite;
+}
+
+.news-item {
+    display: inline-block;
+    padding-right: 50px; /* Espacio entre las noticias */
+    font-size: 12px;
+    font-weight: bold;
+}
+
+@keyframes ticker-move {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+

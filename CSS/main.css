@@ -1,0 +1,329 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+/* Estilos para card de productos*/
+
+main {
+    position: relative;
+    color: rgb(209, 24, 24);
+    top: -112px;
+    width: 100%;
+    height: 200vh;
+    font-family: "Montserrat", sans-serif;
+    padding: 1.25rem;
+}
+
+.main-title {
+    margin-bottom: 50px;
+}
+
+
+
+.container-products {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+    grid-gap: 1rem;
+}
+
+.product {
+    position: relative;
+    border: 1px solid #ccc;
+    padding: 1.25rem;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding-bottom: 2rem; /* Espacio para el icono */
+}
+.product {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.product.show {
+    opacity: 1;
+}
+.product:before{
+    content: "New";
+    background-color: #054ea1;
+    padding: 5px;
+    width: 60px;
+    position: absolute;
+    top: 20px;
+    right: 1px;
+    transform: rotate(-90deg);
+    color: #fff;
+    font-weight: bold;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+.product__img {
+    max-width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    display: block;
+    margin: 0 auto;
+    transition: opacity 0.3s ease;
+}
+
+.product__descrition {
+    position: relative; /* Posiciona el texto normalmente dentro del flujo */
+    padding: 1rem;
+    text-align: center;
+    /* background: rgba(0, 0, 0, 0.6);*/
+    color: #000;
+    border-radius: 0.5rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.product:hover .product__descrition {
+    opacity: 1;
+}
+
+.produc__title {
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0.5rem 0;
+}
+
+.producto__price {
+    margin-top: 10px;
+    font-size: 1rem;
+    text-decoration: none;
+    font-weight: 400;
+    color: #054ea1;
+    background: #fff;
+    border-radius: 50px;
+    text-align: center;
+    padding: 5px 15px;
+    margin-bottom: 0.5rem;
+}
+
+.ri-shopping-cart-2-fill {
+    position: absolute;
+    bottom: 10px;
+    left: 50%; /* Centrado horizontal */
+    transform: translateX(-50%);
+    font-size: 1.5rem;
+    color: #333;
+    cursor: pointer;
+    background-color: #fff;
+    border-radius: 50%;
+    padding: 0.25rem;
+}
+
+.product__img {
+    max-width: 100%;
+    border-radius: 0.5rem;
+    display: block;
+    object-fit: cover;
+    margin: 0 auto;
+    transition: transform 0.3s ease; /* Cambiamos opacity por transform */
+}
+
+.product:hover .product__img {
+    transform: scale(1.1); /* Efecto de zoom */
+}
+
+/*ocultando el exceso de imagenes */
+
+#productContainer .product {
+    display: none; /* Ocultamos todos los productos por defecto */
+}
+.botones-navegacion{
+    display: none;
+    margin-top: 10px;
+    text-align: center;
+    
+}
+
+.gallery-item {
+   /* display: none; /* Ocultar por defecto */
+}
+
+.gallery-item.visible {
+    display: block; /* Mostrar cuando sea visible */
+}
+
+
+.bnt__nav{
+    padding: 10px 20px;
+    margin: 0 15px;
+    cursor: pointer;
+    border-radius: 15px;
+    background-color: rgb(36, 53, 150);
+    color: #fff;
+}
+
+#productContainer .product.show {
+    display: flex; /* Solo mostramos los productos con la clase 'show' */
+}
+
+#showMoreBtn {
+    margin: 1rem auto;
+    display: block;
+    background-color: #054ea1;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .container-products {
+        grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    }
+}
+
+
+
+/* ---------------- Distribuidores ------------------*/
+
+.slider-container{
+    margin-top: 150px;
+    width: 100%;
+    height: 290px;
+}
+
+.swiper-container {
+    position: relative;
+    width: 100%;
+    height: 30%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Centrar la imagen en el slide */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    max-width: 50%;
+    max-height: 50%;
+}
+
+.swiper-pagination {
+    position: relative;
+    top: 80px; /* Ajusta este valor para mover los puntos de paginación hacia abajo */
+    text-align: center;
+    margin-top: 20px; /* Ajusta el espacio adicional entre los puntos de paginación y los slides */
+}
+
+.swiper-button-next, .swiper-button-prev {
+    color: #000; /* Cambia el color de los botones de navegación según tu diseño */
+}
+
+
+
+/*  -------------   footer*/
+
+
+#footer {
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 30px 20px;
+    position: relative;
+    text-align: center;
+    margin-bottom: 0;
+    font-family: "Montserrat", sans-serif;
+    /*background-image: url('ruta/del/logo-oculars.png');  Marca de agua */
+    background-size: 150px;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    z-index: 1; /* Asegura que el contenido esté encima de la marca de agua */
+}
+
+.footer-info, .footer-social {
+    flex: 1;
+    margin: 10px;
+}
+
+.footer-info h3, .footer-social h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.footer-info ul, .footer-social ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-info ul li, .footer-social ul li {
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.footer-social ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.footer-social ul li a:hover {
+    color: #054ea1; /* Cambia el color al hacer hover */
+}
+
+.footer-social ul {
+    display: flex;
+    justify-content: center;
+}
+
+.footer-social ul li {
+    margin: 0 15px;
+}
+
+#footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Oscurece un poco para la legibilidad */
+    z-index: 0; /* Marca de agua detrás del contenido */
+}
+
+/* Diseño responsive */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-social ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-social ul li {
+        margin: 10px 0;
+    }
+}
+

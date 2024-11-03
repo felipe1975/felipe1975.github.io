@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oculars</title>
+<!-- - -libreria REMIXICONS - - -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">
+    <link rel="stylesheet" href="/CSS/main.css">
+    <link rel="stylesheet" href="/CSS/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <meta name="description" content="Pagina diseñada para la venta de lentes y monturas asi como tambien,el servicio de optometria">
+    <meta name="keywords" content="lentes, gafas, monturas, optometria">
+    <meta property="og:title" content="Oculars">
+    <meta property="og:description" content="venta de lentes, monturas y servicio de optometria">
+    <meta property="og:image" content="https://www.facebook.com/photo?fbid=530674526191386&set=pb.100077465287741.-2207520000">
+    <meta name="author" content="Felipe Castillo">
+    <link rel="icon" type="imagen/png" href="/imagen/Icon/Blue_eye_icon.png">
+</head>
+<body>
+    <header class="header" id="header">
+
+        <div class="news-ticker">
+            <div class="news-ticker__content">
+                <span class="news-item">Últimas noticias: ¡Gran evento en la ciudad este fin de semana!</span>
+                <span class="news-item">Actualización: Se esperan lluvias fuertes en la región.</span>
+                <span class="news-item">Deportes: El equipo local gana el campeonato.</span>
+                <span class="news-item">Economía: El mercado de acciones se recupera tras la caída.</span>
+                <!-- Puedes añadir más elementos de noticias aquí -->
+            </div>
+        </div>
+
+        <nav class="nav container">
+            <a href="#" class="nav__logo"><img loading="lazy" src="/imagen/logo/logo2.png" class="logo-nav" id="nav-logo" alt=""></a>
+
+            <div class="nav__menu " id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="#" id="monturas" class="nav__link">Monturas</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#" id="gafas-Sol" class="nav__link">Gafas de Sol</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#" id="lentes-contacto" class="nav__link">Lentes de Contacto</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#" id="examen-Visual" class="nav__link">Examen Visual</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#" id="Cuidado-visual" class="nav__link">Cuidado Visual</a></li>
+                </ul>
+                <span></span>
+                <!-- Close button-->
+                <div class="nav__close" id="nav-close">
+                <i class="ri-close-large-line"></i>
+                </div>
+            </div>
+            <div class="nav__actions">
+                <!-- button serch-->
+                <i class="ri-search-eye-line nav__search" id="search-btn"></i>
+                <!--login button-->
+                <i class="ri-user-line nav__login" id="login-btn"></i>
+                <!--Toggle button-->
+                <div class="nav__toggle" id="nav-toggle">
+                <i class="ri-menu-line"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!--search-->
+    <div class="search" id="search">
+        <form action="" class="search__form">
+            <i class="ri-menu-search-line search__ico"></i>
+            <input type="search" placeholder="Que lente o Montura buscas?" class="search__input">
+        </form>
+        <i class="ri-close-large-line search__close" id="search-close"></i>
+    </div>
+    <!--Login-->
+    <div class="login" id="login">
+        <form action="" class="login__form">
+            <img loading="lazy" src="/imagen/logo/logo2.png" class="login__log" >
+            <div class="login__group">
+                <div>
+                    <label for="email" class="login__label">Email</label>
+                    <input type="email" placeholder="Correo Electronico" id="email" class="login__input">
+                </div>
+                <div>
+                    <label for="password" class="login__label">Password</label>
+                    <input type="password" placeholder="Ingrese contraseña" id="password" class="login__input">
+                </div>
+            </div>
+            <div>
+                <p class="login__signup">
+                    Tienes usuario de ingreso? <a href="#">Sign up</a>
+                </p>
+                <a href="#" class="login__forgot">
+                    Olvidaste tu contraseña?
+                </a>
+                <button type="submit" class="login__button">Log In</button>
+            </div>
+        </form>
+        <i class="ri-close-large-line login__close" id="login-close"></i>
+    </div>
+    
+    <!--//////////////CARUSEL 1\\\\\\\\\\\\\\\-->
+
+    <section id="carousel" class="container-slider">
+        <div class="slider" id="slider">
+
+            <div class="slider__section" >
+                <img loading="lazy" src="/imagen/slider/antireflejo_1.jpg" class="slider__img" alt="">
+                <div class="slider__content">
+                    <h2 class="slider__title">¿Qué es el antireflejo?</h2>
+                    <p class="slider__text"> El filtro antireflejo consiste en un revestimiento que se aplica en ambas superficies de las lentes para disminuir el brillo que se produce como consecuencia del paso de luz reflejada sobre la lente.</p>
+                </div>
+            </div>
+            <div class="slider__section" >
+                <img loading="lazy" src="/imagen/slider/astigmatismo.jpg" width="100%" height="60%" class="slider__img" alt="">
+                <div class="slider__content">
+                    <h2 class="slider__title">¿Qué es el astigmatismo?</h2>
+                    <p class="slider__text">El astigmatismo es una imperfección común y, por lo general, tratable en la curvatura del ojo, que causa visión borrosa de lejos y de cerca. El astigmatismo ocurre cuando la superficie frontal del ojo (córnea) o el cristalino en el interior del ojo tienen curvas dispares</p>
+                </div>
+            </div>
+    
+            <div class="slider__section" >
+                <img loading="lazy" src="/imagen/slider/Fotocromatico.jpg" class="slider__img" alt="">
+                <div class="slider__content" >
+                    <h2 class="slider__title">Lentes Fotocromaticos</h2>
+                    <p class="slider__text">Una lente fotocromática es una lente óptica que se oscurece al exponerse a una luz de frecuencia suficientemente alta, más comúnmente radiación ultravioleta. En ausencia de luz activadora, las lentes vuelven a su estado claro. Las lentes fotocromáticas pueden estar hechas de policarbonato u otro plástic</p>
+                </div>
+            </div>
+    
+            <div class="slider__section">
+                <img loading="lazy" src="/imagen/slider/gafas-de-protección.jpg" width="700px" class="slider__img" alt="">
+                <div class="slider__content">
+                    <h2 class="slider__title">Gafas De Seguridad</h2>
+                    <p class="slider__text">Las gafas protectoras, antiparras o goggles son un tipo de anteojos protectores que normalmente se usan para evitar la entrada de materiales, como por ejemplo la madera, trozos de metales, agua o productos químicos en los ojos.</p>
+                </div>
+            </div>
+        </div>
+    
+        <div class="slider__btn slider__btn--right" id="btn-right">&#62</div>
+        <div class="slider__btn slider__btn--left" id="btn-left">&#60</div>
+        
+    </section>
+
+    <!--  **************  Icono WhatsApp ***************-->
+    
+    <a href="https://wa.me/+573332816506?text=Hola,+me+gustaria+saber+el+precio+de:" target=”_blank” class="whatsapp-btn">
+        <i class="bi bi-whatsapp"></i> 
+    </a>
+
+
+
+    <!--      Main    -->
+    <main class="main">
+        <div class="container">
+
+        <h2 class="main-title">Nuevos productos para ti</h2>
+        <section class="container-products" id="productContainer">
+
+            <div class="product">
+                <img loading="lazy" src="/imagen/monturas/acetato-redondo-3.jpg" alt="" class="product__img gallery-item visible">
+                <div class="product__descrition">
+                    <h3 class="produc__title">Acetato</h3>
+                    <span class="producto__price">$80.000,oo</span>
+                </div>
+                <i class="ri-shopping-cart-2-fill"></i>
+            </div>
+
+            <div class="product">
+                <img loading="lazy" src="/imagen/monturas/acetato.webp" alt="" class="product__img gallery-item visible">
+                <div class="product__descrition">
+                    <h3 class="produc__title">Acetato - Rosada</h3>
+                    <span class="producto__price">$120.000,oo</span>
+                </div>
+                <i class="ri-shopping-cart-2-fill"></i>
+            </div>
+
+            <div class="product">
+                <img loading="lazy" src="/imagen/monturas/acetato-redondo.jpg" alt="" class="product__img gallery-item visible">
+                <div class="product__descrition">
+                    <h3 class="produc__title">Ono</h3>
+                    <span class="producto__price">$150.000,oo</span>
+                </div>
+                <i class="ri-shopping-cart-2-fill"></i>
+            </div>
+
+            <div class="product">
+                <img loading="lazy" src="/imagen/monturas/acetato-europtics.jpg" alt="" class="product__img gallery-item visible">
+                <div class="product__descrition">
+                    <h3 class="produc__title">Europtics</h3>
+                    <span class="producto__price">$180.000,oo</span>
+                </div>
+                <i class="ri-shopping-cart-2-fill"></i>
+            </div>
+
+            <div class="product">
+                <img loading="lazy" src="/imagen/monturas/verona.jpg" alt="" class="product__img gallery-item visible">
+                <div class="product__descrition">
+                    <h3 class="produc__title">Verona Azul</h3>
+                    <span class="producto__price">$230.000,oo</span>
+                </div>
+                <i class="ri-shopping-cart-2-fill"></i>
+            </div>
+
+            <div class="product">
+                <img loading="lazy" src="/imagen/monturas/verona2.jpg" alt="" class="product__img gallery-item visible">
+                <div class="product__descrition">
+                    <h3 class="produc__title">Olik</h3>
+                    <span class="producto__price">$70.000,oo</span>
+                </div>
+                <i class="ri-shopping-cart-2-fill"></i>
+            </div>
+
+            <div class="product">
+                <img loading="lazy" src="/imagen/monturas/acetato-american-color.jpg" alt="" class="product__img gallery-item visible">
+                <div class="product__descrition">
+                    <h3 class="produc__title">American Color</h3>
+                    <span class="producto__price">$120.000,oo</span>
+                </div>
+                <i class="ri-shopping-cart-2-fill"></i>
+            </div>
+
+            <div class="product">
+                <img loading="lazy" src="/imagen/monturas/adidas (1).jpg" alt="" class="product__img gallery-item visible">
+                <div class="product__descrition">
+                    <h3 class="produc__title">Adidas</h3>
+                    <span class="producto__price">$420.000,oo</span>
+                </div>
+                <i class="ri-shopping-cart-2-fill"></i>
+            </div>
+
+            <div class="product">
+                <img loading="lazy" src="/imagen/monturas/BACO2-1.jpg" alt="" class="product__img gallery-item visible">
+                <div class="product__descrition">
+                    <h3 class="produc__title">Baco</h3>
+                    <span class="producto__price">$220.000,oo</span>
+                </div>
+                <i class="ri-shopping-cart-2-fill"></i>
+            </div>
+            
+        </section>
+        <div class="botones-navegacion">
+            <button class="bnt__nav" id="prev">Anterior</button>
+            <button class="bnt__nav" id="next">Siguiente</button>
+        </div>
+        <button id="showMoreBtn">Mostrar más</button>
+    </div>
+
+<!--/*------------   DISTRIBUIDORES -------------------*/-->
+
+    <section class="slider-container">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <a href="https://www.zeiss.co/vision-care/es_co/home.html" target="_blank">
+                        <img loading="lazy" src="/imagen/distribuidores/zeiss.png" alt="Zeiss">
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="https://labocosta.com/" target="_blank">
+                        <img loading="lazy" src="/imagen/distribuidores/labocosta1.png" alt="Transitions">
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="https://www.hoyavision.com/es/" target="_blank">
+                        <img loading="lazy" src="/imagen/distribuidores/HOYA-AZUL.png" alt="Crizal">
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="https://www.essilor.com/co-es/" target="_blank">
+                        <img loading="lazy" src="/imagen/distribuidores/essilor-azul.png" alt="Crizal">
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="#" target="_blank">
+                        <img loading="lazy" src="/imagen/distribuidores/GupoOptical.png">
+                    </a>
+                </div>
+                <!-- más slides ... según sea necesario -->
+            </div>
+            <!-- botones de navegación ...si lo deseas -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <!-- Agrega paginación si lo deseas -->
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+    
+    
+
+    </main>
+
+
+    <!--   FOOTER   -->
+    <footer id="footer">
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>Contacto</h3>
+                <ul>
+                    <li><strong>WhatsApp:</strong> 3332816505</li>
+                    <li><strong>Correo Electrónico:</strong> oculars32@gmail.com</li>
+                </ul>
+            </div>
+            
+            <div class="footer-social">
+                <h3>Síguenos</h3>
+                <ul>
+                    <li><a href="#" target="_blank" rel="noopener noreferrer">otra</a></li>
+                    <li><a href="https://www.facebook.com/profile.php?id=100077465287741" target="_blank">Facebook</a></li>
+                    <li><a href="https://www.instagram.com/ocularss_/" target="_blank">Instagram</a></li>
+                    <li><a href="https://wa.me/573332816505" target="_blank">WhatsApp</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+        
+        
+    <!--*************** MAIN JS *************** -->
+    <script src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+</body>
+</html>

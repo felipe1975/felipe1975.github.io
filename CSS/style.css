@@ -31,6 +31,19 @@
     --z-modal: 1000;
 }
 
+
+body{
+    min-height: 100vh;
+    background-color: #f0faff;
+    overflow-x: hidden;
+    justify-content: end;
+    align-content: end;
+}
+
+.position__global{
+    grid-template-rows: auto 1fh auto;
+}
+
 /*responsive typography*/
 @media screen and (min-width: 1023px){
     :root{
@@ -43,10 +56,6 @@ html{
     scroll-behavior: smooth;
 }
 
-body{
-    background-color: #f0faff;
-    overflow-x: hidden;
-}
 
 body,
 input,
@@ -491,7 +500,8 @@ a{
 
 .container-slider {
     position: relative;
-    width: 400%; /* Ajusta según el ancho deseado */
+    top: 95px;
+    width: auto; /* Ajusta según el ancho deseado */
     max-width: 85rem; /*Ajusta el ancho máximo si es necesario */
     height: 28rem; /* Ajusta el alto según lo que necesites */
     overflow: hidden;
@@ -573,39 +583,93 @@ a{
 
 /* Estilos responsivos para pantallas medianas (tabletas) */
 
-@media only screen and (max-width: 1024px) {
+@media only screen and  (max-width: 1024px) {
     .container-slider {
-        display: block;
         position: relative;
+        top: 90px;
+        width: auto; /* Ajusta según el ancho deseado */
+        max-width: 85rem; /*Ajusta el ancho máximo si es necesario */
+        height: 28rem; /* Ajusta el alto según lo que necesites */
+        overflow: hidden;
+        margin: 7rem auto; /* Para centrar horizontalmente el contenedor en la página */
+        background: linear-gradient(90deg, rgba(2,0,36,0.7133228291316527) 2%, rgba(0,212,255,1) 30%, rgba(9,9,121,1) 95%);
+        }
+        
+    .slider {
+        display: flex;
         width: 100%;
-        max-width: auto;
+        height: 100%;
+        transition: transform 0.5s ease-in-out;
     }
-
+    
+    .slider__section {
+        position: relative;
+        min-width: 100%;
+        height: 100%;
+        align-items: normal;
+    }
+    
     .slider__img {
-        position: absolute;
-        top: auto;
-        max-width: 45%;
-    }
-
-    .slider__content {
-        position:absolute;
-        top: 30%;
-        right: 10px;
-        width: 100%;
+        max-width: 80%; /* Imagen ocupa 50% del ancho */
+        max-height: 20%;
         object-fit: cover;
+        top: 0; /* Imagen alineada a la derecha */
+        margin-left: 3.125rem;
+        border-radius: 0.625rem;
+        box-shadow: 0 0.75rem 1rem hsla(230, 75%, 32%, .15);
     }
-
+    
+    .slider__content {
+        max-width: 50%; /* Contenido ocupa el 50% restante */
+        padding: 1.25rem;
+        text-align: center;
+        margin-left: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    
     .slider__title {
-        font-size: 10px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin: 0.625rem 1.563rem 1rem 0.063;
     }
-
+    
     .slider__text {
-        font-size: 14px;
-        width: 400px;
+        color: var(--body-color);
+        font-size: 1rem;
+        line-height: 1.5;
+        text-align: center;
+    }
+    
+    .slider__btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #fff;
+        background-color: rgba(10, 26, 49, 0.5);
+        padding: 0.625rem;
+        cursor: pointer;
+        z-index: 10;
+    }
+    .slider__btn:hover{
+        border-radius: 50%;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+    
+    .slider__btn--right {
+        right: 0.625rem;
+    }
+    
+    .slider__btn--left {
+        left: 0.625rem;
     }
 }
 
 /* Estilos responsivos para pantallas pequeñas (móviles) */
+
+
 
 /*franja informativa */
 
@@ -639,4 +703,5 @@ a{
         transform: translateX(-100%);
     }
 }
+
 

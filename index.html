@@ -19,6 +19,7 @@
     <link rel="icon" type="imagen/png" href="/imagen/Icon/Blue_eye_icon.png">
 </head>
 <body>
+    <div class="position__global">
     <header class="header" id="header">
 
         <div class="news-ticker">
@@ -68,43 +69,47 @@
                 </div>
             </div>
         </nav>
+        <!--search-->
+        <div class="search" id="search">
+            <form action="" class="search__form">
+                <i class="ri-menu-search-line search__ico"></i>
+                <input type="search" placeholder="Que lente o Montura buscas?" class="search__input">
+            </form>
+            <i class="ri-close-large-line search__close" id="search-close"></i>
+        </div>
+        <!--Login-->
+        <div class="login" id="login">
+            <form action="" class="login__form">
+                <img loading="lazy" src="/imagen/logo/logo2.png" class="login__log" >
+                <div class="login__group">
+                    <div>
+                        <label for="email" class="login__label">Email</label>
+                        <input type="email" placeholder="Correo Electronico" id="email" class="login__input">
+                    </div>
+                    <div>
+                        <label for="password" class="login__label">Password</label>
+                        <input type="password" placeholder="Ingrese contraseña" id="password" class="login__input">
+                    </div>
+                </div>
+                <div>
+                    <p class="login__signup">
+                        Tienes usuario de ingreso? <a href="#">Sign up</a>
+                    </p>
+                    <a href="#" class="login__forgot">
+                        Olvidaste tu contraseña?
+                    </a>
+                    <button type="submit" class="login__button">Log In</button>
+                </div>
+            </form>
+            <i class="ri-close-large-line login__close" id="login-close"></i>
+        </div>
     </header>
 
-    <!--search-->
-    <div class="search" id="search">
-        <form action="" class="search__form">
-            <i class="ri-menu-search-line search__ico"></i>
-            <input type="search" placeholder="Que lente o Montura buscas?" class="search__input">
-        </form>
-        <i class="ri-close-large-line search__close" id="search-close"></i>
-    </div>
-    <!--Login-->
-    <div class="login" id="login">
-        <form action="" class="login__form">
-            <img loading="lazy" src="/imagen/logo/logo2.png" class="login__log" >
-            <div class="login__group">
-                <div>
-                    <label for="email" class="login__label">Email</label>
-                    <input type="email" placeholder="Correo Electronico" id="email" class="login__input">
-                </div>
-                <div>
-                    <label for="password" class="login__label">Password</label>
-                    <input type="password" placeholder="Ingrese contraseña" id="password" class="login__input">
-                </div>
-            </div>
-            <div>
-                <p class="login__signup">
-                    Tienes usuario de ingreso? <a href="#">Sign up</a>
-                </p>
-                <a href="#" class="login__forgot">
-                    Olvidaste tu contraseña?
-                </a>
-                <button type="submit" class="login__button">Log In</button>
-            </div>
-        </form>
-        <i class="ri-close-large-line login__close" id="login-close"></i>
-    </div>
-    
+
+    <!--      Main    -->
+    <main class="main">
+        
+ 
     <!--//////////////CARUSEL 1\\\\\\\\\\\\\\\-->
 
     <section id="carousel" class="container-slider">
@@ -147,16 +152,12 @@
         
     </section>
 
-    <!--  **************  Icono WhatsApp ***************-->
-    
-    <a href="https://wa.me/+573332816506?text=Hola,+me+gustaria+saber+el+precio+de:" target=”_blank” class="whatsapp-btn">
-        <i class="bi bi-whatsapp"></i> 
-    </a>
+            <!--  **************  Icono WhatsApp ***************-->
 
+        <a href="https://wa.me/+573332816506?text=Hola,+me+gustaria+saber+el+precio+de:" target=”_blank” class="whatsapp-btn">
+            <i class="bi bi-whatsapp"></i> 
+        </a>
 
-
-    <!--      Main    -->
-    <main class="main">
         <div class="container">
 
         <h2 class="main-title">Nuevos productos para ti</h2>
@@ -290,7 +291,47 @@
             <div class="swiper-pagination"></div>
         </div>
     </section>
-    
+
+    <!--   **************** Gafas de sol *******************-->
+
+    <div class="card-container">
+        <h2 class="global__title">GAFAS DE SOL</h2>
+        <div class="card__container">
+            <article class="card__article">
+                <img src="/imagen/gafas_sol/sol1.jpeg" alt="image" class="card__img">
+                <div class="card__data">
+                    <span class="card__description">Gafas de sol con proteccion UV 400</span>
+                    <h2 class="card__title">Motura en TR90</h2>
+                    <a href="#" class="card__button">Read More</a>
+                </div>
+            </article>
+            <article class="card__article">
+                <img src="/imagen/gafas_sol/sol2.jpeg" alt="image" class="card__img">
+                <div class="card__data">
+                    <span class="card__description">Gafas de sol con 5 protectores de diferentes colores</span>
+                    <h2 class="card__title">Montura en TR90</h2>
+                    <a href="#" class="card__button">Read More</a>
+                </div>
+            </article>
+            <article class="card__article">
+                <img src="/imagen/gafas_sol/sol3.jpeg" alt="image" class="card__img">
+                <div class="card__data">
+                    <span class="card__description">Gafas de sol con proteccion UV 400</span>
+                    <h2 class="card__title">Montura en TR90</h2>
+                    <a href="#" class="card__button">Read More</a>
+                </div>
+            </article>
+            <article class="card__article">
+                <img src="/imagen/gafas_sol/sol4.jpeg" alt="image" class="card__img">
+                <div class="card__data">
+                    <span class="card__description">Montura oftalmica con sobre-lente polarizado</span>
+                    <h2 class="card__title">Montura en acetato con brazos acerados</h2>
+                    <a href="#" class="card__button">Read More</a>
+                </div>
+            </article>
+        </div>
+
+    </div>
     
 
     </main>
@@ -319,7 +360,7 @@
         </div>
     </footer>
         
-        
+</div>   
     <!--*************** MAIN JS *************** -->
     <script src="main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>

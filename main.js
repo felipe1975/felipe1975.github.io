@@ -113,6 +113,7 @@ document.addEventListener('DOMContentLoaded', function() {
    let maxVisible = maxVisibleInicio; 
 
    // Función para mostrar los siguientes productos
+   
    function showProducts() {
       
       for (let i = currentIndex; i < currentIndex + maxVisibleInicio && i < maxVisibleMonturas; i++) {
